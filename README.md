@@ -4,4 +4,4 @@ The user is able to chose a genre, send a request to the music api's https://mus
 
 this will gererate a random playlist of 10 songs that all have the gene chosen by the user.
 
-this is the wire frame https://whimsical.com/QZgW8SNV4FXbGwNgkzyWjc
+this is the wire frame ![wireframe](css/img/project_01_wireframe.png)
