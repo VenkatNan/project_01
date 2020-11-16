@@ -1,5 +1,6 @@
 /*-------------------------------- Constants --------------------------------*/
 // const musicBrainz = `https://musicbrainz.org/ws/2/`
+const iTunez = 'https://itunes.apple.com/search?'
 
 
 
