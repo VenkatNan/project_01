@@ -2,17 +2,13 @@
 const baseURL ='https://www.dnd5eapi.co/api/'
 const nameURL ='https://www.dnd5eapi.co'
 
-
+const classArray=['non','barbarian','bard','cleric','druid','fighter','monk','paladin','ranger','rogue','sorcerer','warlock','wizard']
 
 /*---------------------------Element Refrences (cached)--------------------------*/
-const options = document.querySelectorAll('select option')
-/*-----------------------Event Listners------------------------------*/
+const options = document.querySelector('.classSelect')
 
-    options.forEach((opt)=>{
-        if(opt.value !== 'non'){
-            opt.addEventListener('click',showClick(opt.value))
-        }
-    })
+/*-----------------------Event Listners------------------------------*/
+    options.addEventListener('input', showClick)
 
 
 /*-------------------------Functions----------------------------*/
@@ -23,20 +19,11 @@ function getAllSpells(){
     .then(data => getName(data));
 }
 
-//fetches data from specific spell based on name
-function getName(data){
-    data = data.results.flat()
-    data.forEach((spell) => {
-    fetch(nameURL+ spell.url)
-    .then(response => response.json())
-    .then(data => renderTable(data));
-    });
-}
 //fetches all spell data for single class
 function getClassSpells(idx){
     fetch(baseURL+`classes/${idx}/spells`)
         .then(response => response.json())
-        .then(data => console.log(data));
+        .then(data => getName(data));
 }
 //fetches all spell data for single school
 function getSchoolSpells(idx){
@@ -45,11 +32,21 @@ function getSchoolSpells(idx){
         .then(data => console.log(data));
 }
 
+//fetches data from specific spell based on name
+function getName(data){
+    if(data.length === 0){noSpells()}
+    data = data.results.flat()
+    data.forEach((spell) => {
+    fetch(nameURL+ spell.url)
+    .then(response => response.json())
+    .then(data => console.log(data));
+    });
+}
 
 //puts spells into table
 function renderTable(spell){
-    // console.log(spell.name);
-    let tb = document.querySelector('tbody')
+    let tb = document.createElement('tbody')
+    
     let tr = document.createElement('tr')
 
     let td2 = document.createElement('td')
@@ -57,7 +54,6 @@ function renderTable(spell){
  
     td2.innerText = spell.name
     td3.innerText = spell.desc
-    // console.log(spell.level, spell.name, spell.desc);
     tr.appendChild(td2)
     tr.appendChild(td3)
 
@@ -66,7 +62,11 @@ function renderTable(spell){
 
 
 function showClick(e){
-    console.log(e);
+    let idx = e.target.selectedIndex
+    getClassSpells(classArray[idx])
+}
+function noSpells(){
+    console.log('no spells here');
 }
 
 getAllSpells();
