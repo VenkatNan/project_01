@@ -5,11 +5,18 @@ const nameURL ='https://www.dnd5eapi.co'
 const classArray=['non','barbarian','bard','cleric','druid','fighter','monk','paladin','ranger','rogue','sorcerer','warlock','wizard']
 
 /*---------------------------Element Refrences (cached)--------------------------*/
-const options = document.querySelector('.classSelect')
+const classes = document.querySelector('.classSelect')
 
 /*-----------------------Event Listners------------------------------*/
-    options.addEventListener('input', showClick)
+classes.addEventListener('input', (e)=>{
+    let idx = e.target.selectedIndex
+    getClassSpells(classArray[idx])
+})
 
+// options.addEventListener('input', (e)=>{
+//     let idx = e.target.selectedIndex
+//     getClassSpells(classArray[idx])
+// })
 
 /*-------------------------Functions----------------------------*/
 //fetches all spell data
@@ -34,39 +41,38 @@ function getSchoolSpells(idx){
 
 //fetches data from specific spell based on name
 function getName(data){
-    if(data.length === 0){noSpells()}
     data = data.results.flat()
     data.forEach((spell) => {
     fetch(nameURL+ spell.url)
     .then(response => response.json())
-    .then(data => console.log(data));
+    .then(data => renderTable(data));
     });
 }
 
 //puts spells into table
 function renderTable(spell){
-    let tb = document.createElement('tbody')
-    
+    let cr = document.createElement('tbody')
+    cr.id = "tbody"
+
+    let tb = document.getElementById('tbody')
     let tr = document.createElement('tr')
-
+    let td1 = document.createElement('td')
     let td2 = document.createElement('td')
-    let td3 = document.createElement('td')
- 
-    td2.innerText = spell.name
-    td3.innerText = spell.desc
-    tr.appendChild(td2)
-    tr.appendChild(td3)
 
+    td1.innerText = spell.name
+    td2.innerText = spell.desc
+
+    tr.appendChild(td1)
+    tr.appendChild(td2)
     tb.appendChild(tr)
 }
 
 
-function showClick(e){
-    let idx = e.target.selectedIndex
-    getClassSpells(classArray[idx])
-}
-function noSpells(){
-    console.log('no spells here');
-}
+// function showClick(e){
+    
+// }
 
+// function noSpells(){
+//     console.log('no spells here');
+// }
 getAllSpells();
