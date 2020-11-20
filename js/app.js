@@ -62,7 +62,11 @@ function getSchoolSpells(idx){
 
 //fetches data from specific spell based on name
 function getName(data){
-    
+    document.querySelector('tbody').remove()
+   let tb = document.createElement('tbody')
+
+    document.querySelector('table').appendChild(tb)
+
     data = data.results.flat()
     data.forEach((spell) => {
     fetch(nameURL+ spell.url)
@@ -72,14 +76,13 @@ function getName(data){
 }
 //puts spells into table
 function renderTable(spell){
-    let tb = document.getElementById('tbody')
+    let tb = document.querySelector('tbody')
     let tr = document.createElement('tr')
     let td1 = document.createElement('td')
     let td2 = document.createElement('td')
     console.log(spell.name);
     td1.innerText = spell.name
     td2.innerText = spell.desc
-
     tr.appendChild(td1)
     tr.appendChild(td2)
     tb.appendChild(tr)
