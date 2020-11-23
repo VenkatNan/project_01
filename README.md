@@ -4,18 +4,26 @@
 # API used
 This project is styled as a Spell Library. Using the D&D API: https://www.dnd5eapi.co/api/ i will be able to generate a list of spells based off of the users class preference, and level.
 
+![Postman spell](/css/img/postmanLevel.png)
+![Postman spell](/css/img/postmanClass.png)
+![Postman spell](/css/img/postmanSchool.png)
+
 # Setup / Layout
 this is the wire frame ![wireframe](/css/img/project01%20-%20Window.png)
 this is the tentative color pallette ![Color Pallette](/css/img/pallette.png)
 
 
 ## PsuedoCode
-when the user first loads the page, all the potential spells are given in alphabetical order. in the nav bar user has four options. three of them are dropdowms, one for Spell Classes, Spell Schools Spell Levels.
-there is a home button that will list out all of the spells again.
+
+* When the user first loads the page, all the potential spells are given in alphabetical order.
+* In the nav bar user has four options. three of them are dropdowns, one for Spell Classes, Spell Schools Spell Levels.
+* When clicked, there is a fetch to the API, and all the spells for that option is rendered on the page.
+* There is a home button that will list out all of the spells again.
 
 this project will utilize Java Script, HTML, and CSS.
 
 ## Final Thoughts
+
 this is the final product![app Photo](/css/img/screenShot.png)
 
 I ran into some trouble with getting the tables to generate, so I had the user input what exactly they want to generate. 
