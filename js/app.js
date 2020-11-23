@@ -45,18 +45,21 @@ function getAllSpells(){
 
 //fetches all spell data for single class
 function getClassSpells(idx){
+    document.querySelector('.classSelect').selectedIndex=0
     fetch(baseURL+`classes/${idx}/spells`)
         .then(response => response.json())
         .then(data => getName(data));
 }
 
 function getLevelSpells(idx){
+    document.querySelector('.lvlSelect').selectedIndex=0
     fetch(baseURL+`/spells?level=${idx}`)
         .then(response => response.json())
         .then(data => getName(data));
 }
 //fetches all spell data for single school
 function getSchoolSpells(idx){
+    document.querySelector('.schoolSelect').selectedIndex=0
     fetch(baseURL+`/spells?school=${idx}`)
         .then(response => response.json())
         .then(data => getName(data));
