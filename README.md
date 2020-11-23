@@ -12,15 +12,15 @@ This project is styled as a Spell Library. Using the D&D API: https://www.dnd5ea
 
 #### School select
 ![Postman spell](/css/img/postmanSchool.png)
+
 #
-
-
 # Setup / Layout
-this is the wire frame ![wireframe](/css/img/project01%20-%20Window.png)
-this is the tentative color pallette ![Color Pallette](/css/img/pallette.png)
+this is the wire frame 
+![wireframe](/css/img/project01%20-%20Window.png)
+this was the tentative color pallette 
+![Color Pallette](/css/img/pallette.png)
 
 #
-
 ## PsuedoCode
 
 * When the user first loads the page, all the potential spells are given in alphabetical order.
@@ -31,7 +31,6 @@ this is the tentative color pallette ![Color Pallette](/css/img/pallette.png)
 this project will utilize Java Script, HTML, and CSS.
 
 #
-
 ## Final Thoughts
 
 this is the final product![app Photo](/css/img/screenShot.png)
@@ -39,7 +38,8 @@ this is the final product![app Photo](/css/img/screenShot.png)
 * I ran into some trouble with getting the tables to generate, so I had the user input what exactly they want to generate. 
 * The header would stay on the page even though no table had been generated yet, so I decided to generate all spells when the page loaded.
 * I was really exited for the sticky headers, and wanted to try and add animation to that, but ran out of time.
-
+  
+#
 ## IceBox
 
 * In the future, I want to be able to get spells that have multiple variables applied to them. ie: all level 9 spells, for clerics, that are abjuration.
