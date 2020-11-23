@@ -17,7 +17,6 @@ const allBtn = document.querySelector('#generator')
 
 /*-----------------------Event Listners------------------------------*/
 classes.addEventListener('input', (e)=>{
-    
     let idx = e.target.selectedIndex
     getClassSpells(classArray[idx])
 })
@@ -78,6 +77,7 @@ function getName(data){
     .then(data => renderTable(data));
     });
 }
+
 //puts spells into table
 function renderTable(spell){
 

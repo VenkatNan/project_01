@@ -1,5 +1,5 @@
 body{
-    background-color: #e2f6ff;
+    background-color: #c3d3d3;
 }
 div{
     display: flex;
@@ -88,7 +88,7 @@ th{
     position:sticky;
     top: 8%;
 }
- 
+
 td{
     text-align: center;
     font-size: 18px;
