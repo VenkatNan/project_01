@@ -94,3 +94,5 @@ function renderTable(spell){
     tr.appendChild(td2);
     tb.appendChild(tr);
 }
+
+getAllSpells();
