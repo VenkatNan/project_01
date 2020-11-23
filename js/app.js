@@ -9,12 +9,15 @@ const schoolArray=['non','abjuration','conjuration','divination','enchantment','
 const levelArray=['non','1','2','3','4','5','6','7','8','9']
 
 /*---------------------------Element Refrences (cached)--------------------------*/
+
 const classes = document.querySelector('.classSelect')
 const levels = document.querySelector('.lvlSelect')
 const schools = document.querySelector('.schoolSelect')
 const allBtn = document.querySelector('#generator')
+
 /*-----------------------Event Listners------------------------------*/
 classes.addEventListener('input', (e)=>{
+    
     let idx = e.target.selectedIndex
     getClassSpells(classArray[idx])
 })
@@ -27,9 +30,8 @@ levels.addEventListener('input', (e)=>{
 schools.addEventListener('input', (e)=>{
     let idx = e.target.selectedIndex
     getSchoolSpells(schoolArray[idx])
-    console.log(e);
-})
 
+})
 allBtn.addEventListener('click', ()=>{
     getAllSpells();
 })
@@ -66,7 +68,6 @@ function getName(data){
    let tb = document.createElement('tbody')
 
     document.querySelector('table').appendChild(tb)
-
     data = data.results.flat()
     data.forEach((spell) => {
     fetch(nameURL+ spell.url)
@@ -76,14 +77,17 @@ function getName(data){
 }
 //puts spells into table
 function renderTable(spell){
-    let tb = document.querySelector('tbody')
-    let tr = document.createElement('tr')
-    let td1 = document.createElement('td')
-    let td2 = document.createElement('td')
-    console.log(spell.name);
-    td1.innerText = spell.name
-    td2.innerText = spell.desc
-    tr.appendChild(td1)
-    tr.appendChild(td2)
-    tb.appendChild(tr)
+
+    let tb = document.querySelector('tbody');
+    let tr = document.createElement('tr');
+    let td1 = document.createElement('td');
+    let td2 = document.createElement('td');
+
+    td1.innerHTML = spell.name;
+
+    td2.innerText = spell.desc;
+
+    tr.appendChild(td1);
+    tr.appendChild(td2);
+    tb.appendChild(tr);
 }
