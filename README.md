@@ -2,11 +2,18 @@
 [project deployment](https://Spell_Binder.surge.sh)
 
 # API used
-This project is styled as a Spell Library. Using the D&D API: https://www.dnd5eapi.co/api/ i will be able to generate a list of spells based off of the users class preference, and level.
+This project is styled as a Spell Library. Using the D&D API: https://www.dnd5eapi.co i will be able to generate a list of spells based off of the users class preference, and level.
 
+##### Level select
 ![Postman spell](/css/img/postmanLevel.png)
+
+##### Class select
 ![Postman spell](/css/img/postmanClass.png)
+
+##### School select
 ![Postman spell](/css/img/postmanSchool.png)
+#
+
 
 # Setup / Layout
 this is the wire frame ![wireframe](/css/img/project01%20-%20Window.png)
