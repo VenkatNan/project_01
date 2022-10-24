@@ -1,4 +1,4 @@
-# project_01
+# SpellBinder
 [project deployment](https://Spell_Binder.surge.sh)
 
 # API used
